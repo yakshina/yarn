@@ -1,4 +1,15 @@
-$color: #c4c4c4 ;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+$color-text: #898290 ;
+$roboto: 'Roboto', sans-serif;
+@mixin font($family, $style, $weight, $size, $height, $spacing) {
+	font-family: $family;
+	font-style: $style;
+	font-weight: $style;
+	font-size: $size;
+	line-height: $height;
+	letter-spacing: $spacing;
+}
 h1{
-	color: $color;
+	@include font($roboto, normal, 500, 16px, 21px, 0.1px);
+	color: $color-text;
 }

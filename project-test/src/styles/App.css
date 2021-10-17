@@ -1,5 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
-h1 {
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  margin: 0 19px;
+}
+
+.header__h1 {
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: normal;
@@ -7,4 +17,151 @@ h1 {
   line-height: 21px;
   letter-spacing: 0.1px;
   color: #898290;
+}
+
+.header__wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (auto)[2];
+      grid-template-columns: repeat(2, auto);
+  -webkit-column-gap: 5%;
+          column-gap: 5%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header__nav {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__nav__burger {
+  display: block;
+  position: relative;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: 0.1px;
+  width: 13px;
+  height: 3px;
+  background: url("./../images/burger.svg");
+  background-size: 13px 3px;
+  background-position: center center;
+  cursor: pointer;
+}
+
+.header__nav__items {
+  display: none;
+}
+
+.companent {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (80px)[4];
+      grid-template-columns: repeat(4, 80px);
+  -webkit-column-gap: 10%;
+          column-gap: 10%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: end;
+      align-content: flex-end;
+  height: 300px;
+}
+
+.companent__col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: end;
+      align-content: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 130px;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0px;
+  color: #fff;
+}
+
+.companent__col .companent__label {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 0px;
+  color: #898290;
+}
+
+.companent__col .companent__front,
+.companent__col .companent__back,
+.companent__col .companent__db,
+.companent__col .companent__norm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 200px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.companent__col .companent__front {
+  background-color: #4AB6E8;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.companent__col .companent__back {
+  background-color: #AA6FAC;
+}
+
+.companent__col .companent__db {
+  background-color: #E85498;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.companent__norm {
+  background-color: #4AB6E8;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  background: repeating-linear-gradient(-45deg, #4AB6E8, #4AB6E8 10px, #fff 0, #fff 17px);
+}
+
+.companent__norm__value {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 24px;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #898290;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }

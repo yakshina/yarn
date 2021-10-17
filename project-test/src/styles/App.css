@@ -1,8 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 body,
 html {
   margin: 0;
   padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+ul {
+  margin-left: 0;
+  padding-left: 0;
 }
 
 .wrapper {
@@ -60,6 +69,19 @@ html {
   display: none;
 }
 
+.wrapper-companent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: end;
+      align-content: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .companent {
   display: -ms-grid;
   display: grid;
@@ -72,7 +94,7 @@ html {
           justify-content: center;
   -ms-flex-line-pack: end;
       align-content: flex-end;
-  height: 300px;
+  height: 350px;
 }
 
 .companent__col {
@@ -87,7 +109,7 @@ html {
       -ms-flex-pack: center;
           justify-content: center;
   width: 100%;
-  height: 130px;
+  height: 327px;
   text-align: center;
   font-family: "Roboto", sans-serif;
   font-style: normal;
@@ -96,16 +118,7 @@ html {
   line-height: 16px;
   letter-spacing: 0px;
   color: #fff;
-}
-
-.companent__col .companent__label {
-  font-family: "Roboto", sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 10px;
-  line-height: 12px;
-  letter-spacing: 0px;
-  color: #898290;
+  margin-bottom: 15px;
 }
 
 .companent__col .companent__front,
@@ -116,13 +129,13 @@ html {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  height: 200px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  min-height: 16.5px;
 }
 
 .companent__col .companent__front {
@@ -139,12 +152,20 @@ html {
   background-color: #E85498;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  margin-bottom: 15px;
+}
+
+.companent__label {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 0px;
+  color: #898290;
 }
 
 .companent__norm {
   background-color: #4AB6E8;
-  margin-bottom: 15px;
   border-radius: 10px;
   background: repeating-linear-gradient(-45deg, #4AB6E8, #4AB6E8 10px, #fff 0, #fff 17px);
 }
@@ -164,4 +185,102 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.charts {
+  margin-bottom: 40px;
+}
+
+.label__descriptions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 10%;
+          column-gap: 10%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 0px;
+  color: #898290;
+}
+
+.label__descriptions__el {
+  position: relative;
+  list-style-type: square;
+}
+
+.label__descriptions__el::before {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: #AA6FAC;
+  left: -25px;
+  top: -3px;
+  border-radius: 3px;
+}
+
+.label__descriptions__el:first-child::before {
+  background-color: #4AB6E8;
+}
+
+.label__descriptions__el:last-child::before {
+  background-color: #E85498;
+}
+
+.compare {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.compare__def {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 48px;
+  height: 24px;
+  padding: 0 10px;
+  border-radius: 50px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 1px solid #fff;
+}
+
+.compare__def::before {
+  content: '';
+  position: absolute;
+  min-width: 10px;
+  height: 10px;
+  left: 9px;
+  top: 7.5px;
+  background-image: url(../images/bad.svg);
+  background-size: auto;
+  background-repeat: no-repeat;
+}
+
+.compare__def p {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0px;
+  color: #fff;
+  padding: 0;
+  margin: 0;
+  margin-left: 10px;
 }

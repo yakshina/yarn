@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+$color-text: #898290 ;
+$front: #AA6FAC;
+$back: #4AB6E8;
+$db: #E85498;
+$value: #fff;
+$roboto: 'Roboto', sans-serif;
+@mixin font($family, $style, $weight, $size, $height, $spacing) {
+	font-family: $family;
+	font-style: $style;
+	font-weight: $style;
+	font-size: $size;
+	line-height: $height;
+	letter-spacing: $spacing;
+}
+//companent
+.wrapper-companent{
+	display: flex;
+	flex-wrap: wrap;
+	align-content: flex-end;
+	justify-content: center;
+}
+.companent {
+	display: grid;
+	grid-template-columns: repeat(4, 80px);
+	column-gap: 10%;
+	justify-content: center;
+	align-content: flex-end;
+	height: 350px;
+}
+.companent__col {
+	display: flex;
+	flex-wrap: wrap;
+	align-content: flex-end;
+	justify-content: center;
+	width: 100%;
+	height: 327px;
+	text-align: center;
+	@include font($roboto, normal, 700, 14px, 14px, 0px);
+	font-weight: bold;
+	color: $value;
+	margin-bottom: 15px;
+	z-index: 10;
+	.companent__front, 
+	.companent__back,
+	.companent__db,
+	.companent__norm {
+		display: flex;
+		width: 100%;
+		align-items: center;
+		justify-content: center;
+		min-height: 16.5px;
+	}
+	.companent__front {
+		position: relative;
+		background-color: $back;
+		border-top-left-radius: 10px;
+		border-top-right-radius: 10px;
+		&::before {
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 9px;
+			background-color: #fff;
+			top:-9px
+		}
+
+		
+	}
+	.companent__back {
+		background-color: $front;
+	}
+	.companent__db {
+		background-color: $db;
+		border-bottom-left-radius: 10px;
+		border-bottom-right-radius: 10px;
+	}
+}
+.companent__label {
+	@include font($roboto, normal, normal, 10px, 12px, 0px);
+	color: $color-text;
+	
+}
+.companent__norm {
+	background-color: $back;
+	border-radius: 10px;
+	background:
+    repeating-linear-gradient(-45deg, 
+    $back, $back 10px, $value 0, $value 17px);
+}
+
+.companent__norm__value {
+	display: flex;
+	width: 48px;
+	height: 24px;
+	border-radius: 5px;
+	background-color: $value;
+	color: $color-text;
+	justify-content: center;
+	align-items: center;
+}
+.charts{
+	margin-bottom: 40px;
+}
+.label__descriptions {
+	display: flex;
+	column-gap: 12%;
+	justify-content: center;
+	@include font($roboto, normal, normal, 10px, 12px, 0px);
+	color: $color-text;
+
+}
+.label__descriptions__el{
+	position: relative;
+	list-style-type: square; 
+
+	&::before {
+		content: '';
+		position: absolute;
+		width: 16px;
+		height: 16px;
+		background-color: $front;
+		left: -25px;
+		top: -3px;
+		border-radius: 3px;
+	}
+	&:first-child::before {
+		background-color: $back;
+
+	}
+	&:last-child::before {
+		background-color: $db;
+
+	}
+}
+
+//разница 
+.compare {
+	display: flex;
+	justify-content: center;
+	column-gap: 11%;
+	margin-left: calc(-80px - 10%);
+}
+.compare__def {
+	position: relative;
+	display: flex;
+	min-width: 30px;
+	height: 24px;
+	padding: 0 10px;
+	border-radius: 50px;
+	align-items: center;
+	justify-content: center;
+	// background-image: url(../images/bad.svg);
+	border: 1px solid #fff;
+	z-index: 4;
+	// &:first-child{
+	// 	margin-left: calc(-80px - 10%);
+	// }
+	
+	p {
+		@include font($roboto, normal, 700, 14px, 14px, 0px);
+		font-weight: bold;
+		color: $value;
+		padding: 0;
+		margin: 0;
+		margin-left: 10px;
+			&::before {
+			content: '';
+			position: absolute;
+			width: 10px;
+			height: 10px;
+			left: 10px;
+			top: 7.5px;
+			background-image: url(../images/bad.svg);
+			background-size: auto;
+			background-repeat: no-repeat;
+	
+		}
+	}
+}
+.companent_wrapper {
+	position: relative;
+}
+.before {
+	position: absolute;
+	content: "";
+	width: 15vw;
+	max-width: calc(160px + 30%);
+	min-width: calc(90px + 30%);
+	height: 330px;
+	border-top: 1px solid $color-text;
+	border-left: 1px solid $color-text;
+	border-right: 1px solid $color-text;
+	right: 60%;
+	top: -11px;
+	z-index: 1;
+	
+}
+.good {
+	p {
+		margin-left: 10px;
+		&::before {
+			transform: rotate(180deg);
+		}
+	}
+}
+.null {
+	p {
+		margin-left: 0;
+		&::before {
+			display: none;
+		}
+	}
+}
+
+.companent_wrapper {
+	.companent__front {
+	&::after {
+		content: '';
+		position: absolute;
+		border: solid $color-text;
+		border-width: 0 1px 1px 0;
+		display: inline-block;
+		padding: 4px;
+		top: -20px;
+		right: 55%;
+		transform: rotate(45deg);
+	}
+	}
+}

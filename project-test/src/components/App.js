@@ -57,7 +57,9 @@ class App extends React.Component{
             <article className="header__wrapper wrapper">
                 <h1 className="header__h1">Количество пройденных тестов “{data.title}”</h1>
                 <nav className="header__nav">
-                    <span className="header__nav__burger"></span>
+                <a href={DATAURL} download target="_blank">
+                <span className="header__nav__burger"></span>
+                </a>
                     <ul className="header__nav__items">
                         <li className="header__nav__item">{data.title}</li>
                     </ul>
@@ -70,12 +72,19 @@ class App extends React.Component{
                     <div className="compare">
                         <CreateDif def={[data.dev, data.test]}/>
                         <CreateDif def={[data.test, data.prod]}/>
-
                     </div>
                     <div className="companent">
-                        <CreateColum instance={[data.dev, 'dev']}/>
+                    <CreateColum instance={[data.dev, 'dev']}/>
+
+                        <div className="companent_wrapper">
+                        <span className="before"></span>
                         <CreateColum instance={[data.test, 'test']}/>
+                        </div>
+                        <div className="companent_wrapper">
+                        <span className="before"></span>
                         <CreateColum instance={[data.prod, 'prod']}/>
+
+                        </div>
                         <CreateNorm instance={[data.norm, 'норматив']}/>
                     </div>
                 </section>
@@ -133,6 +142,7 @@ class App extends React.Component{
     }
 
 function CreateDif(props) {
+    //a значения столбцов
         let a  = [0, 0];
         for(let i = 0; i < props.def.length; i++){
             let arr = props.def[i];
@@ -140,22 +150,26 @@ function CreateDif(props) {
                 a[i]+=x;                
             }
         }
+        //b разность столбцов
         let b = a[1]-a[0];
         let defStyle = {
             background:  '#FC440F'
         };
+        let forClass = 'compare__def';
        if(b>0) {
            b = "+"+b;
             defStyle = {
-            background:  '#00CC99'
+            background:  '#00CC99',
         };
+        forClass = 'compare__def good';
        } else if(b==0) {
         defStyle = {
             background:  '#898290',
         };
+        forClass = 'compare__def null';
        }
         return (
-            <div className="compare__def" style={defStyle}>
+            <div className={forClass} style={defStyle}>
                 <p>{b}</p>
             </div>
         )
